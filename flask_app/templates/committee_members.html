@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul class="nav-bar">
+            <li class="nav-item"><a class="nav-link" href="/">WA Leg Pal Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/list_of_committees">Committees</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <!-- TODO FIX TERRIBLE HACK -->
+        <h1>{{ members[0]['Agency']}} {{ committee_name }} Committee</h1>
+        <div class="flex-div"><h2>Members</h2><button onclick="copyMemberEmails()">Copy emails to clipboard</button><span id="success">Emails copied!</span> </div>
+        <table>
+            <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member['Name'] }}</td>
+                <td>District {{ member['District'] }}</td>
+                <td>{{ member['Agency'] }}</td>
+                <td>{{ member['Party'] }}</td>
+                <td>{{ member['Phone'] }}</td>
+                <td class="email">{{ member['Email'] }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

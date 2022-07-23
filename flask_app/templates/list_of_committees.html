@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Committees</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div>
+        <ul class="nav-bar">
+            <li class="nav-item"><a class="nav-link" href="/">WA Leg Pal Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/list_of_committees">Committees</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>List of Committees</h1>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Acronym</th>
+                <th>Chamber</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for committee in committees %}
+            <tr>
+                <td>{{ committee['Id'] }}</td>
+                <td>{{ committee['Acronym'] }}</td>
+                <td>{{ committee['Agency'] }}</td>
+                <td>{{ committee['Name'] }}</td>
+                <td>{{ committee['Phone'] }}</td>
+                <td><a href="/get_committee_members/{{committee['Agency']}}/{{committee['Name']}}">Get Members</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
