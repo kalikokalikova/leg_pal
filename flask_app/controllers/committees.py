@@ -5,6 +5,7 @@ import urllib.request, urllib.parse, xmltodict, pprint
 
 @app.route('/')
 def index():
+    print("***********WHOOOOOOOOOO**************")
     return render_template("index.html")
 
 @app.route('/list_of_committees')
