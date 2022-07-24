@@ -15,10 +15,18 @@ function copyMemberEmails() {
         }
     };
 
-    navigator.clipboard.writeText(emails);
+    // navigator.clipboard.writeText(emails);
+
+
+
+    const elem = document.createElement('textarea');
+    elem.value = emails;
+    document.body.appendChild(elem);
+    elem.select();
+    document.execCommand('copy');
+    document.body.removeChild(elem);
 
     document.getElementById("success").style.display = "inline-block";
 
 };
-
 
