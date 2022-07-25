@@ -15,10 +15,6 @@ function copyMemberEmails() {
         }
     };
 
-    // navigator.clipboard.writeText(emails);
-
-
-
     const elem = document.createElement('textarea');
     elem.value = emails;
     document.body.appendChild(elem);
