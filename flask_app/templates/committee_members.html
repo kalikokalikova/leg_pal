@@ -23,12 +23,15 @@
             <tbody>
             {% for member in members %}
             <tr>
-                <td>{{ member['Name'] }}</td>
-                <td>District {{ member['District'] }}</td>
-                <td>{{ member['Agency'] }}</td>
-                <td>{{ member['Party'] }}</td>
-                <td>{{ member['Phone'] }}</td>
-                <td class="email">{{ member['Email'] }}</td>
+                <td style="white-space: nowrap;">{{ member['Name'] }}</td>
+                <td>D{{ member['District'] }}</td>
+                {% if member['Party'] == 'Republican' %}
+                    <td style="color: red;">R</td>
+                {% else %}
+                    <td style="color: blue;">D</td>
+                {% endif %}
+                <td style="white-space: nowrap;">{{ member['Phone'] }}</td>
+                <td style="white-space: nowrap;" class="email">{{ member['Email'] }}</td>
             </tr>
             {% endfor %}
             </tbody>

@@ -20,9 +20,8 @@
         <table>
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Acronym</th>
-                <th>Chamber</th>
+                <th class="no-display-on-phone">Id</th>
+                <th class="no-display-on-phone">Acronym</th>
                 <th>Name</th>
                 <th>Phone Number</th>
                 <th></th>
@@ -31,10 +30,9 @@
             <tbody>
             {% for committee in committees %}
             <tr>
-                <td>{{ committee['Id'] }}</td>
-                <td>{{ committee['Acronym'] }}</td>
-                <td>{{ committee['Agency'] }}</td>
-                <td>{{ committee['Name'] }}</td>
+                <td class="no-display-on-phone">{{ committee['Id'] }}</td>
+                <td class="no-display-on-phone">{{ committee['Acronym'] }}</td>
+                <td>{{ committee['Agency'] }} {{ committee['Name'] }}</td>
                 <td>{{ committee['Phone'] }}</td>
                 <td><a href="/get_committee_members/{{committee['Agency']}}/{{committee['Name']}}">Get Members</a></td>
             </tr>
