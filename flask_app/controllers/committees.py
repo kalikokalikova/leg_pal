@@ -53,4 +53,4 @@ def get_committee_members(agency, committee_name):
 def page_not_found(e):
     # note that we set the 404 status explicitly
     print(e)
-    return "404 not found, bitches", 404
+    return "404, not found", 404
